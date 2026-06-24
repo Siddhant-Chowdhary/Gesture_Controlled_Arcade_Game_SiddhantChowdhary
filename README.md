@@ -19,10 +19,10 @@ This is the testing harness and webcam loop. It handles:
 * Extracting the 21 hand landmarks and passing them to `gestures.py`.
 * Drawing the skeletal overlay and the live gesture text HUD onto the screen.
 
-### 📁 `opencv_practice/`
+### `opencv_practice/`
 *Contains smaller scripts and foundational exercises built while learning the basics of computer vision and the OpenCV library.*
 
-## ✋ Supported Gestures
+##  Supported Gestures
 
 The engine currently recognizes 6 distinct states reliably:
 * **FIST:** All fingers folded tightly.
@@ -32,7 +32,7 @@ The engine currently recognizes 6 distinct states reliably:
 * **THUMBS UP:** Thumb extended outward, other fingers folded tightly.
 * **OK SIGN:** Thumb and index finger pinched together, remaining fingers extended (calculated via normalized pinch distance).
 
-## 🛠️ How to Run
+##  How to Run
 
 1. Clone the repository.
 2. Install the required dependencies:
