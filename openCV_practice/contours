@@ -1,0 +1,25 @@
+import cv2
+import numpy as np
+
+# 1. Load the original color image
+image = cv2.imread('Screenshot (64).png')
+
+# 2. Convert the image to grayscale
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+# 3. Apply binary thresholding (converts to black and white)
+# Pixels above 127 become 255 (white), below become 0 (black)
+_, thresh = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)
+
+# 4. Find the contours
+# Returns a list of contours and a hierarchy topology array
+contours, hierarchy = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
+# 5. Draw all detected contours on the original image
+# -1 specifies drawing all contours; (0, 255, 0) is green; 3 is the line thickness
+cv2.drawContours(image, contours, -1, (0, 255, 0), 3)
+
+# 6. Display the final result
+cv2.imshow('Detected Contours', image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
